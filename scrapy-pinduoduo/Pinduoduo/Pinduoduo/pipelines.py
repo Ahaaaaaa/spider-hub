@@ -7,17 +7,18 @@
 import json
 from Pinduoduo.items import PinduoduoItem
 
-from pymongo import MongoClient
+# from pymongo import MongoClient
 
 
 class PinduoduoGoodsPipeline(object):
     """将商品详情保存到MongoDB"""
 
-    def open_spider(self, spider):
-        self.db = MongoClient(host="127.0.0.1", port=27017)
-        self.client = self.db.Pinduoduo.pinduoduo
+    # def open_spider(self, spider):
+        # self.db = MongoClient(host="127.0.0.1", port=27017)
+        # self.client = self.db.Pinduoduo.pinduoduo
 
     def process_item(self, item, spider):
-        if isinstance(item, PinduoduoItem):
-            self.client.insert(dict(item))
+        # if isinstance(item, PinduoduoItem):
+        #     self.client.insert(dict(item))
+        print(item)
         return item
